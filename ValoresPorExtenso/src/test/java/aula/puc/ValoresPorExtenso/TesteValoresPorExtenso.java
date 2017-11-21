@@ -1,8 +1,7 @@
 package aula.puc.ValoresPorExtenso;
 
+import org.junit.Assert;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class TesteValoresPorExtenso {
 	
