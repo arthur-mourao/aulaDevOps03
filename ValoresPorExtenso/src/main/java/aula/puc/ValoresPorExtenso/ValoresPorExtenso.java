@@ -16,7 +16,7 @@ public class ValoresPorExtenso {
 		}else if (valor >= 700){
 			resultado = resultado + "Setecentos";
 		}else if (valor >= 600){
-			resultado = resultado + "Seiscentos";
+			resultado = resultado + "Seiscentoss";
 		}else if (valor >= 500){
 			resultado = resultado + "Quinhentos";
 		}else if (valor >= 400){
