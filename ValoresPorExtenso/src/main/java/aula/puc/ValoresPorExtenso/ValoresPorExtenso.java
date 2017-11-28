@@ -4,11 +4,40 @@ public class ValoresPorExtenso {
 
 	public String valorPorExtenso (Float valor){
 		String resultado = "";
-		
-		if (valor < 0 || valor > 999){
+		String resultadoFracao = "";
+
+		if ( valor > 999){
 			return "Valor Inválido";
 		}
 		
+		if (valor < 0 ){
+			resultado = "Menos ";
+			valor = valor * -1;
+		}
+
+		int parteDecimal =  (int) (( valor % 1 ) * 100); //duas casas decimais
+		int parteInteira = valor.intValue();
+		
+		resultado = resultado + converteNumero ( parteInteira );
+		
+		resultado = resultado + " reais";
+		
+		resultadoFracao = converteNumero ( parteDecimal );
+		
+		if (resultadoFracao != ""){
+			resultado = resultado + " e " + resultadoFracao + " centavos";
+		}
+		
+		return resultado;
+	}
+	
+	private String converteNumero ( Integer valor ) {
+		String resultado = "";
+
+		if ( valor == 0){
+			return "";
+		}
+			
 		if (valor >= 900 ){
 			resultado = resultado + "Novecentos";
 		}else if (valor >= 800){
@@ -29,10 +58,10 @@ public class ValoresPorExtenso {
 			resultado = resultado + "Cento";
 		}
 		
-		
 		if (valor >= 100){ 
 			resultado = resultado + " e ";
-			valor = valor % 100;}	
+			valor = valor % 100;
+		}	
 		
 		if (valor >= 90 ){
 			resultado = resultado + "Noventa";
@@ -72,7 +101,7 @@ public class ValoresPorExtenso {
 			return resultado + "Dez";
 		}
 		
-		if (valor % 10 > 0){ 
+		if (valor % 10 > 0){
 			resultado = resultado + " e ";
 			valor = valor % 10;}
 		
