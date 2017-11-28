@@ -20,7 +20,7 @@ public class TesteValoresPorExtenso {
     {	
 		String valorPorExtenso;
 		valorPorExtenso = conversor.valorPorExtenso((float) 42.00);
-		Assert.assertEquals( "Quarenta e Dois", valorPorExtenso);
+		Assert.assertEquals( "Quarenta e Dois reais", valorPorExtenso);
     }
 		
 	@Test
@@ -28,6 +28,24 @@ public class TesteValoresPorExtenso {
     {	
 		String valorPorExtenso;
 		valorPorExtenso = conversor.valorPorExtenso((float) 678.00);
-		Assert.assertEquals( "Seiscentos e Setenta e Oito", valorPorExtenso);
-    }	
+		Assert.assertEquals( "Seiscentos e Setenta e Oito reais", valorPorExtenso);
+    }
+	
+	@Test
+    public void testeValorNegativo()
+    {	
+		String valorPorExtenso;
+		valorPorExtenso = conversor.valorPorExtenso((float) -18.00);
+		Assert.assertEquals( "Menos Dezoito reais", valorPorExtenso);
+    }
+		
+
+	@Test
+    public void testeValorFracionario()
+    {	
+		String valorPorExtenso;
+		valorPorExtenso = conversor.valorPorExtenso((float) 112.25);
+		Assert.assertEquals( "Cento e Doze reais e Vinte e Cinco centavos", valorPorExtenso);
+    }
+	
 }
